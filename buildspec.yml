@@ -1,0 +1,17 @@
+version: 0.1
+phases:
+  install:
+    runtime-versions:
+      python: 3.12
+  pre_build:
+    commands:
+      - echo "Nothing added in pre-build"
+  build:
+    commands:
+      - echo "Zipping deployment package..."
+      - zip -g deploymentpackage.zip lambdafunction.py
+  post_build:
+    commands:
+      - echo "Updating lambda function..."
+      - aws lambda update-function-code --function-name incrementViewCount --zip-file fileb://deployment_package.zip
+      - echo "Complete."
