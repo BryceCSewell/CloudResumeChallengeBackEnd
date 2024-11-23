@@ -2,7 +2,7 @@ version: 0.1
 phases:
   install:
     runtime-versions:
-      python: 3.12
+      python: 3.11
   pre_build:
     commands:
       - echo "Nothing added in pre-build"
