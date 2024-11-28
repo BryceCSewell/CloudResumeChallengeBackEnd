@@ -13,5 +13,5 @@ phases:
   post_build:
     commands:
       - echo "Updating lambda function..."
-      - aws lambda update-function-code --function-name arn:aws:lambda:us-east-1:501525630603:function:incrementViewCount --zip-file fileb://deployment_package.zip
+      - aws lambda update-function-code --function-name incrementViewCount --zip-file fileb://deploymentpackage.zip
       - echo "Complete."
